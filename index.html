@@ -1,49 +1,94 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f5f5f7">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Gift Tracker">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon.svg">
-<link rel="stylesheet" href="styles.css">
-<title>Gift Tracker</title>
-</head>
-<body>
-<div id="app">
-<header class="topbar">
-  <div>
-    <div class="eyebrow">GIFT TRACKER</div>
-    <h1 id="pageTitle">Upcoming</h1>
-  </div>
-  <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f5f5f7" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Gift Hub" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Gift Hub</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">GIFT HUB</div>
+          <h1 id="pageTitle">Upcoming</h1>
+        </div>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+          ☾
+        </button>
+      </header>
 
-<main id="main"></main>
+      <main id="main"></main>
 
-<nav class="tabbar">
-  <button class="tab active" data-tab="home"><span>⌂</span><small>Upcoming</small></button>
-  <button class="tab" data-tab="people"><span>♙</span><small>People</small></button>
-  <button class="tab" data-tab="events"><span>◷</span><small>Events</small></button>
-  <button class="tab add" id="quickAdd" aria-label="Add">+</button>
-</nav>
-</div>
-
-<div class="toast" id="toast"></div>
-
-<div class="modal hidden" id="modal">
-  <div class="sheet">
-    <div class="sheet-head">
-      <h2 id="modalTitle"></h2>
-      <button class="close" id="closeModal">×</button>
+      <nav class="tabbar">
+        <button class="tab active" data-tab="home">
+          <span>⌂</span><small>Upcoming</small>
+        </button>
+        <button class="tab" data-tab="people">
+          <span>♙</span><small>People</small>
+        </button>
+        <button class="tab" data-tab="events">
+          <span>◷</span><small>Events</small>
+        </button>
+        <button
+          class="tab add-tab"
+          id="quickAdd"
+          aria-haspopup="menu"
+          aria-expanded="false"
+        >
+          <span class="add-icon"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+              <path
+                d="M12 7.5v9M7.5 12h9"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+              /></svg></span
+          ><small>Add</small>
+        </button>
+      </nav>
+      <div class="menu-backdrop" id="menuBackdrop"></div>
+      <div class="add-menu" id="addMenu" role="menu">
+        <button role="menuitem" data-add="person">
+          <span>♙</span>Add Person
+        </button>
+        <button role="menuitem" data-add="event">
+          <span>◷</span>Add Event
+        </button>
+        <button role="menuitem" data-add="gift"><span>🎁</span>Add Gift</button>
+      </div>
     </div>
-    <div id="modalBody"></div>
-  </div>
-</div>
 
-<script src="app.js"></script>
-</body>
+    <div class="toast" id="toast"></div>
+
+    <div class="modal hidden" id="modal">
+      <div class="sheet">
+        <div class="sheet-head">
+          <h2 id="modalTitle"></h2>
+          <button class="close" id="closeModal">×</button>
+        </div>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
