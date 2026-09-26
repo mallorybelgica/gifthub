@@ -1,0 +1,10 @@
+{
+  "name":"Gift Tracker",
+  "short_name":"Gifts",
+  "start_url":".",
+  "display":"standalone",
+  "background_color":"#f5f5f7",
+  "theme_color":"#f5f5f7",
+  "description":"A simple personal gift buying tracker.",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
